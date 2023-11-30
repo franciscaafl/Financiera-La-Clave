@@ -1,0 +1,73 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 70px;
+}
+
+.infoBox {
+  background-color: #F7F7F7;
+  border-radius: 4px;
+  display: flex;
+  gap: 160px;
+  justify-content: center;
+  padding: 24px;
+  
+}
+
+.info {
+  align-items: center;
+  display: flex;
+  gap: 32px;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.rotulo {
+  color: #828282;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cantidad {
+  color: #414141;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+
+}
+
+.table {
+  display: flex;
+}
+
+.propiedad {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+}
+
+.rotulo2 {
+  background-color: #F7F7F7;
+  color: #666666;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px;
+  padding-left: 24px;
+  width: 200px;
+  
+}
+
+
+.dato {
+  background-color: #F7F7F7;
+  padding: 16px;
+  padding-left: 24px;
+  width: 200px;
+}

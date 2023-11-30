@@ -1,0 +1,112 @@
+.wrapper {
+  padding: 90px 170px;
+}
+
+.hero {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+}
+
+.heroImage {
+  height: auto;
+  width: 500px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 500px;
+}
+
+.title {
+  border: 1px solid red;
+  color: #414141;
+  font-family: 'Poppins', sans-serif;
+  font-size: 56px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 32px;
+}
+
+.buttonPrimary {
+  background-color: white;
+  border: none;
+  border: 1px solid #414141;
+  border-radius: 8px;
+  color: #414141;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.buttonSecondary {
+  background-color: #414141;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.loginBackground {
+  background-color: #414141;
+}
+
+.subtitle {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.loginBox {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+  padding: 72px 0;
+  width: 564px;
+}
+
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  height: 40px;
+  padding: 4px 16px;
+}
+
+.label {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button {
+  background-color: #DB5A47;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 32px;
+}
+
+.text {
+  border: 1px solid red;
+}
