@@ -85,7 +85,6 @@ function Simulacion() {
       </div>
       <div className={s.buttons}>
         <button className={s.button}>Volver</button>
-        <button className={s.button}>Descargar</button>
       </div>
       </div>
     </article>

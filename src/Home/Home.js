@@ -1,46 +1,75 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Header from '../components/Header/Header';
+import { Link } from 'react-router-dom';
 import s from './Home.module.css';
 
 function Home() {
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [token, setToken] = useState(null);
+  const [data, setData] = useState({
+    email: '',
+    password: ''
+  
+  });
+  const[error, setError] = useState('');
+
+  const handleChange = ({currentTarget: input}) =>{
+    setData({...data, [input.name]: input.value});
+  }
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       // Lógica de inicio de sesión usando axios
-      const response = await axios.post('http://localhost:5000/api/login', {
-        username,
-        password,
-      });
+      const {data: res} = await axios.post('http://localhost:5000/api/Prestamos', data);
+      localStorage.setItem("token", res.data);
+      window.location = "/"
+      console.log(res.message);
 
-      const newToken = response.data.token;
-      setToken(newToken);
+      //const newToken = response.data.token;
+      //setToken(newToken);
     } catch (error) {
-      console.error('Login error:', error.message);
+      if(
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ){
+        setError(error.response.data.message);
+      }
+      //console.error('Login error:', error.message);
     }
   };
 
 
+ 
+
+  
+
+
   return (
     <>
-    <Header />
+    <section className={s.header}>
+      <img src="/lafinanciera.png" alt="Logo" className={s.logo}/>
+      <div className={s.links}>
+        <Link href="#login" className={s.buttonSimple}>
+            <span>Iniciar sesión</span>
+        </Link>
+        <Link href="#hero" to='/Simular'>
+          <button className={s.button}>Simular</button>
+        </Link>
+      </div>
+    </section>
     <article className={s.wrapper}>
       <div className={s.hero} id="hero">
         <div className={s.heroText}>
           <h1 className={s.title}>Simula tu préstamo en UF</h1>
           <text>
-            Lorem ipsum dolor sit amet consectetur. Mi consequat tincidunt et integer. 
-            Malesuada accumsan nibh senectus pellentesque dictum ullamcorper non. 
+            De manera rápida y sencilla podrás visualizar el valor de tu cuota.
           </text>
           <div className={s.buttons}>
-            <button className={s.buttonPrimary}>Simular en UF</button>
-            <button className={s.buttonSecondary}>Simular en pesos</button>
+            <Link to='./Simular'> 
+              <button className={s.buttonPrimary}>Simular en UF</button>
+            </Link>
           </div>
         </div>
         <img src="image-hero.png" alt="imagen hero" className={s.heroImage}/>
@@ -54,13 +83,30 @@ function Home() {
           <h1 className={s.subtitle}>Iniciar sesión</h1>
           <div className={s.inputSection}>
             <span className={s.label}>Correo electrónico</span>
-            <input placeholder='Correo electrónico' className={s.input}/>
+            <input
+                type = "Text"
+                placeholder='Correo Electrónico' 
+                name='email'
+                onChange={handleChange}
+                value={data.email}
+                required
+                className={s.input}
+              />
           </div>
           <div className={s.inputSection}>
             <span className={s.label}>Contraseña</span>
-            <input placeholder='Contraseña' className={s.input}/>
+            <input 
+              type='Password'
+              placeholder='Contraseña'
+              name='password'
+              onChange={handleChange}
+              value={data.password}
+              required
+              className={s.input}/>
           </div>
-          <button className={s.button}>Ingresar</button>
+          <Link lassName={s.link} to='./Prestamos'>
+            <button className={s.button}>Ingresar</button>
+          </Link>
         </div>
       </div>
     </div>

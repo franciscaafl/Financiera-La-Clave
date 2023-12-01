@@ -1,0 +1,47 @@
+.wrapper {
+  gap: 16pxpx;
+  padding-left: 180px;
+  padding-right: 180px;
+  padding-top: 40px;
+}
+
+.box {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+}
+
+.buttons {
+  display: flex;
+  gap: 24px;
+}
+
+.table {
+  display: flex;
+  gap: 240px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info {
+  display: flex;
+  gap: 4px;
+}
+
+.rotulo {
+  font-weight: 500;
+}
+
+.button {
+  background-color: #2F2D38;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  height: 48px;
+  width: 280px;
+}

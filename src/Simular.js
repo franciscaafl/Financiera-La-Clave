@@ -98,7 +98,7 @@ function Simular() {
             <div className={s.infos}>
               <div className={s.info}>
                 <label>Tasa de interés en UF</label>
-                <input onChange={(e) => recuperarDato("interes", e.target.value)} name="interes" value={interes} className={s.input} type="text" placeholder="ej: 5%"/>
+                <input onChange={(e) => recuperarDato("interes", e.target.value)} name="interes" value={interes} className={s.input} type="text" placeholder="ej: 1"/>
               </div>
             </div>
             </div>
